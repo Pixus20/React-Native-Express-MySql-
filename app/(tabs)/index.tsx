@@ -1,10 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello, welcome to React Native!</Text>
+      <Text style={styles.greeting}>Вітаємо, [Ім'я користувача]!</Text>
+      <View style={styles.stats}>
+        <Text style={styles.statItem}>Задачі: 5 відкритих, 20 завершених</Text>
+        <Text style={styles.statItem}>Проекти: 3 активні</Text>
+        <Text style={styles.statItem}>Клієнти: 15</Text>
+      </View>
+      <View style={styles.actions}>
+        <Button title="Нова задача" onPress={() => {}} color={styles.button.color} />
+        <Button title="Новий проект" onPress={() => {}} color={styles.button.color} />
+      </View>
+      <View style={styles.recent}>
+        <Text style={styles.sectionTitle}>Останні дії</Text>
+        <Text style={styles.recentItem}>• Задача "Виправити баг" оновлена</Text>
+        <Text style={styles.recentItem}>• Коментар до задачі "Розробка дизайну"</Text>
+      </View>
     </View>
   );
 }
@@ -12,12 +26,43 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    backgroundColor: '#f0f0f0', 
+    padding: 20,
+    backgroundColor: '#ffffff', 
   },
-  text: {
-    fontSize: 20, 
-    color: '#ff0000', 
+  greeting: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#6A0DAD', 
+    marginBottom: 20,
+  },
+  stats: {
+    marginBottom: 20,
+  },
+  statItem: {
+    fontSize: 16,
+    color: '#228B22', 
+    marginVertical: 5,
+  },
+  actions: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginVertical: 20,
+  },
+  button: {
+    color: '#6A0DAD', 
+  },
+  recent: {
+    marginTop: 20,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#6A0DAD', 
+    marginBottom: 10,
+  },
+  recentItem: {
+    fontSize: 16,
+    color: '#228B22', 
+    marginVertical: 3,
   },
 });

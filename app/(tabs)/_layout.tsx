@@ -22,8 +22,15 @@ export default function TabLayout() {
         tabBarStyle: Platform.select({
           ios: {
             position: 'absolute',
+            height: 80,
+            paddingBottom: 20,
+            paddingTop: 10,
           },
-          default: {},
+          default: {
+            height: 80,
+            paddingBottom: 20,
+            paddingTop: 10,
+          },
         }),
       }}>
       <Tabs.Screen
@@ -32,6 +39,15 @@ export default function TabLayout() {
           title: 'Home',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" color={color} size={size || 28} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="task"
+        options={{
+          title: 'Tasks',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="checkmark-done" color={color} size={size || 28} />
           ),
         }}
       />
@@ -62,6 +78,9 @@ export default function TabLayout() {
           ),
         }}
       />
+
+
+
     </Tabs>
   );
 }
