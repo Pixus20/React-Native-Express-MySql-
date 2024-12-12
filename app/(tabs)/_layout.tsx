@@ -122,7 +122,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: '',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" color={color} size={size || 28} />
           ),
@@ -131,7 +131,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="task"
         options={{
-          title: 'Tasks',
+          title: '',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="checkmark-done" color={color} size={size || 28} />
           ),
@@ -140,7 +140,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="add_task"
         options={{
-          title: 'Add Task',
+          title: ' ',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="add-circle" color={color} size={size || 28} />
           ),
@@ -149,7 +149,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="users"
         options={{
-          title: 'Users',
+          title: '',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="people" color={color} size={size || 28} />
           ),
@@ -158,7 +158,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="account"
         options={{
-          title: 'Account',
+          title: '',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person" color={color} size={size || 28} />
           ),
