@@ -18,7 +18,7 @@ export default function AddTaskScreen() {
 
   const handleSubmit = () => {
     console.log('Task submitted:', task);
-    // Add logic to save the task to the database
+
   };
 
   return (
@@ -68,7 +68,7 @@ export default function AddTaskScreen() {
           selectedValue={task.progress}
           onValueChange={(value) => handleInputChange('progress', value)}
           style={styles.picker}
-          itemStyle={styles.pickerItem} // Додаємо стиль для елементів
+          itemStyle={styles.pickerItem} 
         >
           <Picker.Item label="Прийнято" value="прийнято" />
           <Picker.Item label="В процесі" value="в процесі" />
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 20,
-    backgroundColor: '#ffffff', // Білий фон
+    backgroundColor: '#ffffff', 
   },
   title: {
     fontSize: 24,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   picker: {
-    width: '100%', // Обмежуємо ширину списку до контейнера
+    width: '100%', 
     borderWidth: 1,
     borderColor: '#228B22', // Зелений
     borderRadius: 8,
