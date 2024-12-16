@@ -26,17 +26,13 @@ const Account = () => {
       <Text style={styles.info}>Нікнейм: JohnDoe</Text>
       <Text style={styles.info}>Електронна адреса: johndoe@example.com</Text>
 
-      {/* Поле для введення дати народження */}
-      <TextInput
-        style={styles.input}
-        placeholder="Дата народження"
+      <input
+        type="date"
         value={birthday}
-        onChangeText={setBirthday}
-        keyboardType="numeric"
-        maxLength={10} // Формат: дд/мм/рррр
+        onChange={(e) => setBirthday(e.target.value)}
+        style={styles.input}
       />
 
-      {/* Поле для опису про себе */}
       <TextInput
         style={[styles.input, styles.textarea]}
         placeholder="Про себе (макс. 30 слів)"
@@ -48,16 +44,14 @@ const Account = () => {
           }
         }}
         multiline
-        maxLength={300} // Максимум для 30 слів
+        maxLength={300}
       />
 
-      {/* Поле для завантаження фото */}
       <Button title="Завантажити фото" onPress={handleImagePick} color="#6A0DAD" />
       {photo && (
         <Image source={{ uri: photo }} style={styles.photo} />
       )}
 
-      {/* Контейнер для кнопок з відступами */}
       <View style={styles.buttonsContainer}>
         <Button title="Оновити" onPress={() => {}} color="#6A0DAD" />
       </View>
@@ -69,7 +63,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#ffffff', // Білий фон
+    backgroundColor: '#ffffff',
   },
   title: {
     fontSize: 24,
@@ -105,8 +99,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   buttonsContainer: {
-    marginTop: 20, // Збільшуємо відступ між кнопками
-    marginBottom: 30, // Додаємо відступ внизу
+    marginTop: 20,
+    marginBottom: 30,
   },
 });
 

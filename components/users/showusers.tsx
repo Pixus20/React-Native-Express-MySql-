@@ -1,5 +1,6 @@
+import { Link } from 'expo-router';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 export default function UsersScreen() {
   const [users, setUsers] = useState([
@@ -12,11 +13,13 @@ export default function UsersScreen() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Користувачі</Text>
       {users.map((user) => (
-        <View key={user.id} style={styles.card}>
-          <Text style={styles.cardTitle}>{user.username}</Text>
-          <Text style={styles.cardDetail}>ID: {user.id}</Text>
-          <Text style={styles.cardDetail}>Email: {user.email}</Text>
-        </View>
+        <Link style={styles.card} key={user.id} href={`users/${user.id}`} asChild >
+            <TouchableOpacity style={styles.card}>
+               <Text style={styles.cardTitle}>{user.username}</Text>
+               <Text style={styles.cardDetail}>ID: {user.id}</Text>
+               <Text style={styles.cardDetail}>Email: {user.email}</Text>
+            </TouchableOpacity>
+        </Link>
       ))}
     </ScrollView>
   );
