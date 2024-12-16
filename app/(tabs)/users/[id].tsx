@@ -1,14 +1,14 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-// Дані користувача
+
 const user = {
   id: 1,
   username: 'ivanov',
   email: 'ivanov@example.com',
-  birthDate: '1990-05-15', // Дата народження
-  description: 'Це опис користувача, який демонструє його навички та досягнення.', // Опис
-  photo: 'https://via.placeholder.com/150', // Посилання на фото
+  birthDate: '1990-05-15', 
+  description: 'Це опис користувача, який демонструє його навички та досягнення.',
+  photo: 'https://via.placeholder.com/150', 
 };
 
 export default function UserProfileScreen() {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#f9f9f9',
     borderWidth: 1,
-    borderColor: '#228B22', // Зелений
+    borderColor: '#228B22', 
     borderRadius: 8,
     padding: 20,
     shadowColor: '#000',

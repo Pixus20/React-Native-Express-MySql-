@@ -1,10 +1,18 @@
-import UsersScreen from '@/components/users/showusers'
-import React from 'react'
+import UsersScreen from '@/components/users/showusers';
+import { useNavigation } from 'expo-router';
+import React, { useEffect } from 'react';
 
-const users = () => {
-  return (
-    <UsersScreen/>
-  )
-}
+const Users = () => {
+  const navigation = useNavigation();
 
-export default users
+  useEffect(() => {
+    navigation.setOptions({
+      title: 'Список користувачів', 
+      headerShown: false, 
+    });
+  }, [navigation]);
+
+  return <UsersScreen />;
+};
+
+export default Users;
