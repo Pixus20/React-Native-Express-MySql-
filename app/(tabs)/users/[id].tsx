@@ -1,6 +1,7 @@
+import { Ionicons } from '@expo/vector-icons'; // Імпортуємо Ionicons для стрілки назад
+import { useRouter } from 'expo-router'; // Використовуємо useRouter для навігації
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const user = {
   id: 1,
@@ -12,8 +13,15 @@ const user = {
 };
 
 export default function UserProfileScreen() {
+  const router = useRouter(); // Ініціалізуємо роутер для навігації
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      {/* Кнопка "Назад" */}
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Ionicons name="arrow-back" size={28} color="black" />
+      </TouchableOpacity>
+
       <View style={styles.card}>
         <Image source={{ uri: user.photo }} style={styles.photo} />
         <Text style={styles.cardTitle}>{user.username}</Text>
@@ -31,6 +39,12 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#ffffff',
     alignItems: 'center',
+  },
+  backButton: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 1,
   },
   card: {
     backgroundColor: '#f9f9f9',

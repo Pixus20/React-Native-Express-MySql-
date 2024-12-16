@@ -39,7 +39,7 @@ export default function TabLayout() {
         options={{
           title: '',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" color={color} size={size || 28} />
+            <Ionicons name="home" color={color} size={32} />
           ),
         }}
       />
@@ -48,16 +48,16 @@ export default function TabLayout() {
         options={{
           title: '',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="checkmark-done" color={color} size={size || 28} />
+            <Ionicons name="checkmark-done" color={color} size={32} />
           ),
         }}
       />
       <Tabs.Screen
         name="add_task"
         options={{
-          title: ' ',
+          title: '',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="add-circle" color={color} size={size || 28} />
+            <Ionicons name="add-circle" color={color} size={32} />
           ),
         }}
       />
@@ -66,7 +66,7 @@ export default function TabLayout() {
         options={{
           title: '',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="people" color={color} size={size || 28} />
+            <Ionicons name="people" color={color} size={32} />
           ),
         }}
       />
@@ -75,7 +75,16 @@ export default function TabLayout() {
         options={{
           title: '',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" color={color} size={size || 28} />
+            <Ionicons name="person" color={color} size={32} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="chats"
+        options={{
+          title: '',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="chatbox-ellipses" color={color} size={32} />
           ),
         }}
       />
