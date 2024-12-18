@@ -1,5 +1,6 @@
 import { default as AddComment, default as handleAddComment } from '@/components/comments/addcomment';
 import ShowComment from '@/components/comments/showcomment';
+import TimeLogger from '@/components/timeBill/logTime';
 import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -28,6 +29,7 @@ const TaskDetail = () => {
         <Text style={styles.cardDetail}>Повний опис: {task.fullDescription}</Text>
         <Text style={styles.cardDetail}>Прогрес: {task.progress}</Text>
       </View>
+      <TimeLogger/>
       <ShowComment commentData={{ author: 'Іван', date: '2024-12-15', comment: 'Це тестовий коментар' }} />
       <AddComment onAddComment={handleAddComment} />
     </ScrollView>
