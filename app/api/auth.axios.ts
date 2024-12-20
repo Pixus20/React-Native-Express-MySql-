@@ -15,6 +15,17 @@ const registerUser = async (username: string, email: string, password: string, )
   }
 };
 
+export const loginUser = async (email: string, password: string) => {
+  return axios.post(
+    `${API_BASE_URL}/auth/login`,
+    { email, password },
+    { withCredentials: true }
+  );
+};
+
+
+
 export default {
   registerUser,
+  loginUser,
 };
